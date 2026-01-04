@@ -1,0 +1,62 @@
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.middle-section .game-grid {
+  width: 380px;
+  height: 280px;
+  display: grid;
+  grid-template: repeat(28, 1fr) / repeat(38, 1fr);
+  box-shadow: 0 0 2px rgba(245, 245, 245, 0.5) inset;
+  border: 1px solid rgb(245, 245, 245);
+  justify-items: center;
+  align-items: center;
+}
+
+.middle-section .game-grid .grid-content {
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+}
+.middle-section .game-grid .snake.head {
+  position: relative;
+  /* transition: transform 0.05s; */
+}
+
+.middle-section .game-grid .snake.head::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: black;
+  top: 2px;
+  left: 4.5px;
+}
+.middle-section .game-grid .snake.head::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: black;
+  top: 5px;
+  left: 4.5px;
+}
+
+.middle-section .game-grid .snake {
+  background: green;
+  grid-area: 14 / 19;
+}
+.middle-section .game-grid .food {
+  background: orange;
+  grid-area: 1 / 38;
+}
+
+.middle-section .score-container {
+  display: flex;
+  justify-content: space-between;
+}
